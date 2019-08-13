@@ -12,7 +12,6 @@ set rtp+=~/tabnine-vim
 
 " Plugins
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree'
 Plug 'Yggdroot/indentLine'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-rails'
@@ -21,13 +20,29 @@ Plug 'thoughtbot/vim-rspec'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
 " Disable arrow keys and slow down hjkl to force learning
 Plug 'takac/vim-hardtime'
 call plug#end()
 
+""""
+"""" Start NERDTree settings
+""""
+
 " Start NERDTree on 'vim' without needing to do 'vim .'
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Show hidden files by default
+
+let NERDTreeShowHidden=1
+let NERDTreeAutoDeleteBuffer = 1
+
+""""
+"""" End NERDTree settings
+""""
 
 " Turn on vim hardtime by default
 let g:hardtime_default_on = 1
