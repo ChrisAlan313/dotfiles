@@ -74,3 +74,7 @@ set background=dark
 set t_Co=256
 
 set showmatch
+
+
+" Windows 10 Changes
+set backspace=indent,eol,start " backspace over everything in insert mode
